@@ -27,10 +27,10 @@ def get_db():
     return conn
 
 def init_db():
+    print(f"[init_db] DB_PATH={DB_PATH}", flush=True)
     conn = get_db()
     c = conn.cursor()
-    c.executescript("""
-    CREATE TABLE IF NOT EXISTS users (
+    c.execute("""CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
         age INTEGER,
@@ -41,31 +41,31 @@ def init_db():
         adhd INTEGER DEFAULT 0,
         avatar_color TEXT DEFAULT '#4A90D9',
         points INTEGER DEFAULT 0
-    );
-    CREATE TABLE IF NOT EXISTS tasks (
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY,
         name TEXT NOT NULL,
         category TEXT,
         frequency TEXT,
         estimated_minutes INTEGER DEFAULT 15,
         min_age INTEGER DEFAULT 10
-    );
-    CREATE TABLE IF NOT EXISTS preferences (
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS preferences (
         id INTEGER PRIMARY KEY,
         user_id INTEGER,
         task_id INTEGER,
         score INTEGER DEFAULT 5,
         color TEXT DEFAULT 'yellow',
         UNIQUE(user_id, task_id)
-    );
-    CREATE TABLE IF NOT EXISTS sessions (
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS sessions (
         id INTEGER PRIMARY KEY,
         week_start TEXT,
         created_by INTEGER,
         status TEXT DEFAULT 'draft',
         created_at TEXT DEFAULT (datetime('now'))
-    );
-    CREATE TABLE IF NOT EXISTS assignments (
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS assignments (
         id INTEGER PRIMARY KEY,
         session_id INTEGER,
         task_id INTEGER,
@@ -78,8 +78,8 @@ def init_db():
         postpone_to TEXT,
         is_adhoc INTEGER DEFAULT 0,
         adhoc_name TEXT
-    );
-    CREATE TABLE IF NOT EXISTS point_transactions (
+    )""")
+    c.execute("""CREATE TABLE IF NOT EXISTS point_transactions (
         id INTEGER PRIMARY KEY,
         user_id INTEGER,
         amount INTEGER,
@@ -87,10 +87,10 @@ def init_db():
         description TEXT,
         status TEXT DEFAULT 'approved',
         created_at TEXT DEFAULT (datetime('now'))
-    );
-    """)
+    )""")
     conn.commit()
     conn.close()
+    print("[init_db] tables created OK", flush=True)
 
 def seed_data():
     conn = get_db()
