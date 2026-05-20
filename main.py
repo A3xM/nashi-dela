@@ -11,10 +11,12 @@ app = FastAPI()
 
 DB_PATH = os.environ.get(
     "DB_PATH",
-    os.path.join(os.path.dirname(__file__), "family_chores.db")
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "family_chores.db")
 )
-# Создаём папку для БД если нужно (для /data на Fly.io)
-os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+# Создаём папку для БД если нужно
+_db_dir = os.path.dirname(DB_PATH)
+if _db_dir:
+    os.makedirs(_db_dir, exist_ok=True)
 
 # ── DB helpers ────────────────────────────────────────────────────────────────
 
