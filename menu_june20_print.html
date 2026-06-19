@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Меню · 20–26 июня · A4</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 14mm 18mm 12mm 18mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background: white;
+    color: #1A2332;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 14mm 18mm 12mm;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1A2332 0%, #2C5F7A 55%, #3A7CA5 100%);
+    border-radius: 5mm;
+    padding: 7mm 9mm 6mm;
+    margin-bottom: 5mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .h-left {}
+  .h-label {
+    font-size: 7pt;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 1.5mm;
+  }
+  .h-title {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .h-dates {
+    font-size: 9pt;
+    color: rgba(255,255,255,0.65);
+    margin-top: 1.5mm;
+  }
+  .h-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+    align-items: flex-end;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+  .ldot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 4.5mm;
+  }
+
+  /* Column widths */
+  col.c-day { width: 16%; }
+  col.c-b   { width: 28%; }
+  col.c-l   { width: 28%; }
+  col.c-d   { width: 28%; }
+
+  /* Header row */
+  thead th {
+    padding: 2.5mm 3mm 2mm;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .th-day {
+    text-align: left;
+    color: #9A9088;
+    border-bottom: 1.5px solid #DDD8D2;
+  }
+  .th-b {
+    background: #FFF4EC;
+    color: #C05A18;
+    border-radius: 3mm 3mm 0 0;
+    text-align: center;
+  }
+  .th-l {
+    background: #EBF8F0;
+    color: #25845A;
+    border-radius: 3mm 3mm 0 0;
+    text-align: center;
+  }
+  .th-d {
+    background: #E8EFF8;
+    color: #1A5A8A;
+    border-radius: 3mm 3mm 0 0;
+    text-align: center;
+  }
+
+  /* Body rows */
+  tbody td {
+    padding: 3mm 3mm 2.5mm;
+    vertical-align: top;
+    border-bottom: 1px solid #F0EBE5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Day cell */
+  .td-day {
+    border-right: 1px solid #F0EBE5;
+  }
+  .day-name {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #1A2332;
+    line-height: 1.2;
+  }
+  .day-date {
+    font-size: 7.5pt;
+    color: #B0A898;
+    margin-top: 0.5mm;
+  }
+
+  /* Weekend accent */
+  tr.wknd .td-day {
+    border-left: 3px solid #E76F51;
+    padding-left: 2mm;
+  }
+
+  /* Meal cells */
+  .td-b { background: #FEFCFA; }
+  .td-l { background: #FAFDFB; }
+  .td-d { background: #F8FAFD; }
+
+  .meal-name {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #2A3545;
+    line-height: 1.35;
+  }
+  .meal-sub {
+    font-size: 7.5pt;
+    color: #B0A898;
+    margin-top: 0.5mm;
+  }
+  .soup-tag {
+    display: inline-block;
+    font-size: 6.5pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #25845A;
+    background: #EBF8F0;
+    padding: 0.5mm 1.5mm;
+    border-radius: 1.5mm;
+    margin-top: 1mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    display: flex;
+    gap: 4mm;
+    align-items: stretch;
+  }
+  .tip-box {
+    flex: 1;
+    background: #FFF4EC;
+    border-left: 3px solid #E76F51;
+    border-radius: 0 2mm 2mm 0;
+    padding: 2.5mm 3.5mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .tip-label {
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C05A18;
+    margin-bottom: 1mm;
+  }
+  .tip-text {
+    font-size: 8pt;
+    color: #5A4A3A;
+    line-height: 1.45;
+  }
+  .next-box {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 38mm;
+  }
+  .next-label {
+    font-size: 6.5pt;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #C0B8B0;
+    margin-bottom: 1mm;
+  }
+  .next-date {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #8A8078;
+  }
+
+  @media print {
+    body { padding: 0; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+
+  /* Screen preview wrapper */
+  @media screen {
+    html { background: #E8E4DF; }
+    body {
+      margin: 10mm auto;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="h-left">
+    <div class="h-label">Семейное меню</div>
+    <div class="h-title">Меню на неделю</div>
+    <div class="h-dates">20 — 26 июня · 2026</div>
+  </div>
+  <div class="h-legend">
+    <div class="legend-row"><div class="ldot" style="background:#E07A3A"></div>Завтрак</div>
+    <div class="legend-row"><div class="ldot" style="background:#3A9E68"></div>Обед</div>
+    <div class="legend-row"><div class="ldot" style="background:#3A7CA5"></div>Ужин</div>
+  </div>
+</div>
+
+<!-- TABLE -->
+<table>
+  <colgroup>
+    <col class="c-day">
+    <col class="c-b">
+    <col class="c-l">
+    <col class="c-d">
+  </colgroup>
+  <thead>
+    <tr>
+      <th class="th-day">День</th>
+      <th class="th-b">☀ Завтрак</th>
+      <th class="th-l">◉ Обед</th>
+      <th class="th-d">◑ Ужин</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr class="wknd">
+      <td class="td-day">
+        <div class="day-name">Суббота</div>
+        <div class="day-date">20 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Рисовая молочная каша с манго</div>
+        <div class="meal-sub">+ оладьи</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Борщ с индейкой</div>
+        <div><span class="soup-tag">◎ варим на 2 дня</span></div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Шашлыки из свинины</div>
+        <div class="meal-sub">хоровац</div>
+      </td>
+    </tr>
+
+    <tr class="wknd">
+      <td class="td-day">
+        <div class="day-name">Воскресенье</div>
+        <div class="day-date">21 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Пирог с тунцом и кижучем</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Борщ с индейкой</div>
+        <div class="meal-sub">день 2</div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Садж с курицей и овощами</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td-day">
+        <div class="day-name">Понедельник</div>
+        <div class="day-date">22 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Омлет с фетой и болгарским перцем</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Лапша с индейкой</div>
+        <div><span class="soup-tag">◎ варим на 2 дня</span></div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Камбала жареная с лимоном</div>
+        <div class="meal-sub">беби-картофель</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td-day">
+        <div class="day-name">Вторник</div>
+        <div class="day-date">23 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Тост с тунцом и яйцом пашот</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Лапша с индейкой</div>
+        <div class="meal-sub">день 2</div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Спагетти с чесночными креветками</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td-day">
+        <div class="day-name">Среда</div>
+        <div class="day-date">24 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Драники</div>
+        <div class="meal-sub">со сметаной</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Суп с хеком, помидорами и оливками</div>
+        <div><span class="soup-tag">◎ варим на 2 дня</span></div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Курица с цветной капустой</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td-day">
+        <div class="day-name">Четверг</div>
+        <div class="day-date">25 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Панкейки</div>
+        <div class="meal-sub">+ орехи и сыр</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Суп с хеком, помидорами и оливками</div>
+        <div class="meal-sub">день 2</div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Ньокки сливочные с вонголе</div>
+      </td>
+    </tr>
+
+    <tr class="wknd">
+      <td class="td-day">
+        <div class="day-name">Пятница</div>
+        <div class="day-date">26 июня</div>
+      </td>
+      <td class="td-b">
+        <div class="meal-name">Яичница с грудинкой</div>
+      </td>
+      <td class="td-l">
+        <div class="meal-name">Суп мисо</div>
+      </td>
+      <td class="td-d">
+        <div class="meal-name">Соба с кальмарами и овощами</div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="tip-box">
+    <div class="tip-label">Совет по маринованию</div>
+    <div class="tip-text">Шашлык: свинину замариновать с пятницы — лук кольцами, соль, кориандр, кефир. Вакуум. Минимум 8 часов.</div>
+  </div>
+  <div class="next-box">
+    <div class="next-label">Следующее меню</div>
+    <div class="next-date">Суббота, 27 июня</div>
+  </div>
+</div>
+
+</body>
+</html>
