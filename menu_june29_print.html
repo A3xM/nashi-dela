@@ -21,41 +21,41 @@
     print-color-adjust: exact;
   }
 
-  /* HEADER */
+  /* HEADER — solid color only, no gradient, no flex, no rgba */
   .header {
-    background: linear-gradient(135deg, #1A2332 0%, #3A7CA5 100%);
-    color: white;
+    background-color: #1A2332;
+    color: #ffffff;
     padding: 10pt 14pt;
-    border-radius: 8pt;
+    border-radius: 6pt;
     margin-bottom: 10pt;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    overflow: hidden;
   }
-  .header-left {}
+  .header-legend {
+    float: right;
+    font-size: 7.5pt;
+    color: #aabbcc;
+    line-height: 2;
+    text-align: right;
+    padding-top: 2pt;
+  }
   .header-label {
     font-size: 7pt;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: #7799bb;
     margin-bottom: 3pt;
   }
   .header-title {
-    font-size: 18pt;
+    font-size: 17pt;
     font-weight: 800;
+    color: #ffffff;
     letter-spacing: -0.5px;
   }
   .header-dates {
     font-size: 9pt;
-    color: rgba(255,255,255,0.7);
+    color: #aabbcc;
     margin-top: 2pt;
-  }
-  .header-legend {
-    text-align: right;
-    font-size: 7.5pt;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
   }
   .dot {
     display: inline-block;
@@ -66,14 +66,14 @@
     vertical-align: middle;
   }
 
-  /* TABLE */
-  table {
+  /* MENU TABLE */
+  table.menu {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
   }
 
-  th {
+  table.menu th {
     padding: 6pt 8pt;
     font-size: 7.5pt;
     font-weight: 700;
@@ -82,17 +82,18 @@
     text-align: left;
     border-bottom: 2pt solid #1A2332;
   }
-  th.col-day { width: 15%; color: #1A2332; }
-  th.col-b { width: 28%; color: #C05A18; }
-  th.col-l { width: 27%; color: #2A8050; }
-  th.col-d { width: 30%; color: #2A5A85; }
+  th.col-day { width: 13%; color: #1A2332; }
+  th.col-b   { width: 27%; color: #C05A18; }
+  th.col-l   { width: 27%; color: #2A8050; }
+  th.col-d   { width: 33%; color: #2A5A85; }
 
-  td {
-    padding: 7pt 8pt;
+  table.menu td {
+    padding: 6pt 8pt;
     vertical-align: top;
-    border-bottom: 0.5pt solid #EDE8E3;
+    border-bottom: 0.5pt solid #E8E2DC;
     font-size: 9pt;
     line-height: 1.4;
+    color: #1A2332;
   }
 
   .day-cell {
@@ -107,96 +108,84 @@
     margin-top: 1pt;
   }
 
-  tr.weekend td { background: #FDFAF7; }
-  tr.weekend .day-cell { color: #C05A3A; }
+  /* Weekend rows — border accent only, no background */
+  tr.weekend td {
+    border-left: 2.5pt solid #E76F51;
+  }
+  tr.weekend td.day-cell {
+    color: #C05A3A;
+  }
 
-  td.cell-b { background: #FFFAF5; }
-  td.cell-l { background: #F5FBF7; }
-  td.cell-d { background: #F5F8FC; }
+  /* Meal columns — left border accent instead of background */
+  td.cell-b { border-top: 1.5pt solid #E07A3A; }
+  td.cell-l { border-top: 1.5pt solid #3A9E68; }
+  td.cell-d { border-top: 1.5pt solid #3A7CA5; }
 
   .soup-badge {
     display: inline-block;
     font-size: 7pt;
     font-weight: 700;
     color: #2A8050;
-    background: #DFF2E8;
+    border: 0.75pt solid #2A8050;
     padding: 1pt 4pt;
     border-radius: 3pt;
     margin-bottom: 2pt;
   }
 
-  .main-dish {
-    font-weight: 600;
-    color: #1A2332;
-  }
-  .sub-dish {
-    font-size: 8pt;
-    color: #8A9AAA;
-    margin-top: 1pt;
-  }
+  .main-dish { font-weight: 600; color: #1A2332; }
+  .sub-dish  { font-size: 8pt; color: #8A9AAA; margin-top: 1pt; }
 
-  /* TIPS SECTION */
-  .tips-section {
+  /* BOTTOM SECTION — table layout, not flex */
+  table.bottom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8pt 0;
     margin-top: 10pt;
-    display: flex;
-    gap: 8pt;
   }
-
-  .tip-box {
-    flex: 1;
-    background: #FFF5EF;
-    border-left: 3pt solid #E76F51;
-    border-radius: 5pt;
+  table.bottom td {
+    vertical-align: top;
+    width: 50%;
     padding: 8pt 9pt;
+    border-radius: 5pt;
+    font-size: 8pt;
+    line-height: 1.55;
+    color: #3A4555;
   }
-  .tip-box-title {
+  td.tip-cell  { border-left: 3pt solid #E76F51; background-color: #fff8f5; }
+  td.nutri-cell { border-left: 3pt solid #3A7CA5; background-color: #f5f8fd; }
+
+  .box-title {
     font-size: 7pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #C05040;
-    margin-bottom: 4pt;
+    margin-bottom: 5pt;
   }
-  .tip-item {
-    font-size: 8pt;
-    color: #3A4555;
-    line-height: 1.5;
-    margin-bottom: 3pt;
-  }
+  .tip-cell  .box-title { color: #C05040; }
+  .nutri-cell .box-title { color: #2A5A85; }
+
+  .tip-item { margin-bottom: 3pt; }
   .tip-item b { color: #1A2332; }
 
-  .nutri-box {
-    flex: 1;
-    background: #F0F6FF;
-    border-left: 3pt solid #3A7CA5;
-    border-radius: 5pt;
-    padding: 8pt 9pt;
-  }
-  .nutri-box-title {
-    font-size: 7pt;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #2A5A85;
-    margin-bottom: 4pt;
-  }
-  .nutri-item {
-    font-size: 8pt;
-    color: #3A4555;
-    line-height: 1.6;
-  }
-  .ok { color: #2A8050; font-weight: 700; }
+  .ok   { color: #2A8050; font-weight: 700; }
   .warn { color: #C05A18; font-weight: 700; }
 
   .footer {
     margin-top: 8pt;
     text-align: center;
     font-size: 7.5pt;
-    color: #C0B8B0;
+    color: #B0A898;
   }
 
   @media print {
     body { background: white; }
+    .header { background-color: #1A2332 !important; color: #ffffff !important; }
+    .header-title { color: #ffffff !important; }
+    .header-label { color: #7799bb !important; }
+    .header-dates { color: #aabbcc !important; }
+    .header-legend { color: #aabbcc !important; }
+    td.tip-cell   { background-color: #fff8f5 !important; }
+    td.nutri-cell { background-color: #f5f8fd !important; }
   }
 </style>
 </head>
@@ -204,31 +193,28 @@
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-left">
-    <div class="header-label">Семейное меню</div>
-    <div class="header-title">🍽 На неделю</div>
-    <div class="header-dates">29 июня — 5 июля · 2026</div>
-  </div>
   <div class="header-legend">
-    <div><span class="dot" style="background:#E07A3A"></span>Завтрак</div>
-    <div><span class="dot" style="background:#3A9E68"></span>Обед</div>
-    <div><span class="dot" style="background:#3A7CA5"></span>Ужин</div>
+    <div><span class="dot" style="background-color:#E07A3A"></span>Завтрак</div>
+    <div><span class="dot" style="background-color:#3A9E68"></span>Обед</div>
+    <div><span class="dot" style="background-color:#3A7CA5"></span>Ужин</div>
   </div>
+  <div class="header-label">Семейное меню</div>
+  <div class="header-title">🍽 На неделю</div>
+  <div class="header-dates">29 июня — 5 июля · 2026</div>
 </div>
 
 <!-- MENU TABLE -->
-<table>
+<table class="menu">
   <thead>
     <tr>
       <th class="col-day">День</th>
-      <th class="col-b">🌅 Завтрак</th>
-      <th class="col-l">🥗 Обед</th>
-      <th class="col-d">🍽 Ужин</th>
+      <th class="col-b">Завтрак</th>
+      <th class="col-l">Обед</th>
+      <th class="col-d">Ужин</th>
     </tr>
   </thead>
   <tbody>
 
-    <!-- ПОНЕДЕЛЬНИК -->
     <tr>
       <td class="day-cell">Пн<div class="day-num">29 июня</div></td>
       <td class="cell-b">
@@ -241,12 +227,11 @@
         <div class="sub-dish">Морковь · лук · зелень</div>
       </td>
       <td class="cell-d">
-        <div class="main-dish">🐟 Хек в провансальском соусе</div>
+        <div class="main-dish">Хек в провансальском соусе</div>
         <div class="sub-dish">Томаты · оливки · чеснок · печёные овощи</div>
       </td>
     </tr>
 
-    <!-- ВТОРНИК -->
     <tr>
       <td class="day-cell">Вт<div class="day-num">30 июня</div></td>
       <td class="cell-b">
@@ -263,7 +248,6 @@
       </td>
     </tr>
 
-    <!-- СРЕДА -->
     <tr>
       <td class="day-cell">Ср<div class="day-num">1 июля</div></td>
       <td class="cell-b">
@@ -281,7 +265,6 @@
       </td>
     </tr>
 
-    <!-- ЧЕТВЕРГ -->
     <tr>
       <td class="day-cell">Чт<div class="day-num">2 июля</div></td>
       <td class="cell-b">
@@ -293,12 +276,11 @@
         <div class="sub-dish">День 2</div>
       </td>
       <td class="cell-d">
-        <div class="main-dish">🦑 Паста фрутти ди маре</div>
+        <div class="main-dish">Паста фрутти ди маре</div>
         <div class="sub-dish">Кальмары · вонголе · белое вино · чеснок</div>
       </td>
     </tr>
 
-    <!-- ПЯТНИЦА -->
     <tr>
       <td class="day-cell">Пт<div class="day-num">3 июля</div></td>
       <td class="cell-b">
@@ -311,11 +293,10 @@
       </td>
       <td class="cell-d">
         <div class="main-dish">Куриные бёдра на гриле + тёплый салат</div>
-        <div class="sub-dish">Руккола · говяжий стейк 100 г · черри · пармезан</div>
+        <div class="sub-dish">Руккола · стейк 100 г · черри · пармезан</div>
       </td>
     </tr>
 
-    <!-- СУББОТА -->
     <tr class="weekend">
       <td class="day-cell">Сб<div class="day-num">4 июля</div></td>
       <td class="cell-b">
@@ -328,12 +309,11 @@
         <div class="sub-dish">Томаты · тмин · кориандр · лимон</div>
       </td>
       <td class="cell-d">
-        <div class="main-dish">🐟 Скумбрия на мангале</div>
+        <div class="main-dish">Скумбрия на мангале</div>
         <div class="sub-dish">Запечённые овощи · лимон · зелень</div>
       </td>
     </tr>
 
-    <!-- ВОСКРЕСЕНЬЕ -->
     <tr class="weekend">
       <td class="day-cell">Вс<div class="day-num">5 июля</div></td>
       <td class="cell-b">
@@ -353,34 +333,29 @@
   </tbody>
 </table>
 
-<!-- TIPS + NUTRI -->
-<div class="tips-section">
-
-  <div class="tip-box">
-    <div class="tip-box-title">🧄 Маринуем заранее</div>
-    <div class="tip-item"><b>Хек (Пн):</b> за 30 мин — оливковое масло + лимон + тимьян.</div>
-    <div class="tip-item"><b>Индейка (Вт):</b> с вечера пн — масло + чеснок + розмарин + тимьян.</div>
-    <div class="tip-item"><b>Куриные бёдра (Ср):</b> с вечера вт — соевый соус + чеснок + паприка + мёд.</div>
-    <div class="tip-item"><b>Скумбрия (Сб):</b> за 1–2 часа — масло + лимон + чеснок. Надрезы на тушке.</div>
-  </div>
-
-  <div class="nutri-box">
-    <div class="nutri-box-title">📊 Нутрициология недели</div>
-    <div class="nutri-item">
+<!-- BOTTOM: маринады + нутрициология -->
+<table class="bottom">
+  <tr>
+    <td class="tip-cell">
+      <div class="box-title">Маринуем заранее</div>
+      <div class="tip-item"><b>Хек (Пн):</b> за 30 мин — оливковое масло + лимон + тимьян.</div>
+      <div class="tip-item"><b>Индейка (Вт):</b> с вечера пн — масло + чеснок + розмарин + тимьян.</div>
+      <div class="tip-item"><b>Куриные бёдра (Ср):</b> с вечера вт — соевый соус + чеснок + паприка + мёд.</div>
+      <div class="tip-item"><b>Скумбрия (Сб):</b> за 1–2 часа — масло + лимон + чеснок. Надрезы на тушке.</div>
+    </td>
+    <td class="nutri-cell">
+      <div class="box-title">Нутрициология недели</div>
       <span class="ok">✓</span> Жирная рыба: скумбрия (Сб) — омега-3<br>
       <span class="ok">✓</span> Морепродукты: кальмары + вонголе (Чт)<br>
       <span class="ok">✓</span> Рыбных ужинов: 2 из 7, не подряд<br>
       <span class="ok">✓</span> Красное мясо: 1 раз (котлеты Вс)<br>
       <span class="ok">✓</span> Бобовые: чечевица (Сб–Вс)<br>
       <span class="warn">!</span> Куриные бёдра Ср + Пт — повтор
-    </div>
-  </div>
+    </td>
+  </tr>
+</table>
 
-</div>
-
-<div class="footer">
-  Следующее меню · 5 июля 2026 &nbsp;·&nbsp; Бюджет ~10 000 руб/нед
-</div>
+<div class="footer">Следующее меню · 5 июля 2026 &nbsp;·&nbsp; Бюджет ~10 000 руб/нед</div>
 
 </body>
 </html>
