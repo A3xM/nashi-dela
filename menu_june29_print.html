@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Меню · 29 июня — 5 июля · Печать</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 14mm 14mm 14mm 14mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    color: #1A2332;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1A2332 0%, #3A7CA5 100%);
+    color: white;
+    padding: 10pt 14pt;
+    border-radius: 8pt;
+    margin-bottom: 10pt;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-left {}
+  .header-label {
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 3pt;
+  }
+  .header-title {
+    font-size: 18pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .header-dates {
+    font-size: 9pt;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2pt;
+  }
+  .header-legend {
+    text-align: right;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+  }
+  .dot {
+    display: inline-block;
+    width: 7pt;
+    height: 7pt;
+    border-radius: 50%;
+    margin-right: 4pt;
+    vertical-align: middle;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  th {
+    padding: 6pt 8pt;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+    border-bottom: 2pt solid #1A2332;
+  }
+  th.col-day { width: 15%; color: #1A2332; }
+  th.col-b { width: 28%; color: #C05A18; }
+  th.col-l { width: 27%; color: #2A8050; }
+  th.col-d { width: 30%; color: #2A5A85; }
+
+  td {
+    padding: 7pt 8pt;
+    vertical-align: top;
+    border-bottom: 0.5pt solid #EDE8E3;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+
+  .day-cell {
+    font-weight: 700;
+    font-size: 9pt;
+    color: #1A2332;
+  }
+  .day-num {
+    font-size: 7.5pt;
+    color: #B0A898;
+    font-weight: 400;
+    margin-top: 1pt;
+  }
+
+  tr.weekend td { background: #FDFAF7; }
+  tr.weekend .day-cell { color: #C05A3A; }
+
+  td.cell-b { background: #FFFAF5; }
+  td.cell-l { background: #F5FBF7; }
+  td.cell-d { background: #F5F8FC; }
+
+  .soup-badge {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    color: #2A8050;
+    background: #DFF2E8;
+    padding: 1pt 4pt;
+    border-radius: 3pt;
+    margin-bottom: 2pt;
+  }
+
+  .main-dish {
+    font-weight: 600;
+    color: #1A2332;
+  }
+  .sub-dish {
+    font-size: 8pt;
+    color: #8A9AAA;
+    margin-top: 1pt;
+  }
+
+  /* TIPS SECTION */
+  .tips-section {
+    margin-top: 10pt;
+    display: flex;
+    gap: 8pt;
+  }
+
+  .tip-box {
+    flex: 1;
+    background: #FFF5EF;
+    border-left: 3pt solid #E76F51;
+    border-radius: 5pt;
+    padding: 8pt 9pt;
+  }
+  .tip-box-title {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C05040;
+    margin-bottom: 4pt;
+  }
+  .tip-item {
+    font-size: 8pt;
+    color: #3A4555;
+    line-height: 1.5;
+    margin-bottom: 3pt;
+  }
+  .tip-item b { color: #1A2332; }
+
+  .nutri-box {
+    flex: 1;
+    background: #F0F6FF;
+    border-left: 3pt solid #3A7CA5;
+    border-radius: 5pt;
+    padding: 8pt 9pt;
+  }
+  .nutri-box-title {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2A5A85;
+    margin-bottom: 4pt;
+  }
+  .nutri-item {
+    font-size: 8pt;
+    color: #3A4555;
+    line-height: 1.6;
+  }
+  .ok { color: #2A8050; font-weight: 700; }
+  .warn { color: #C05A18; font-weight: 700; }
+
+  .footer {
+    margin-top: 8pt;
+    text-align: center;
+    font-size: 7.5pt;
+    color: #C0B8B0;
+  }
+
+  @media print {
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-label">Семейное меню</div>
+    <div class="header-title">🍽 На неделю</div>
+    <div class="header-dates">29 июня — 5 июля · 2026</div>
+  </div>
+  <div class="header-legend">
+    <div><span class="dot" style="background:#E07A3A"></span>Завтрак</div>
+    <div><span class="dot" style="background:#3A9E68"></span>Обед</div>
+    <div><span class="dot" style="background:#3A7CA5"></span>Ужин</div>
+  </div>
+</div>
+
+<!-- MENU TABLE -->
+<table>
+  <thead>
+    <tr>
+      <th class="col-day">День</th>
+      <th class="col-b">🌅 Завтрак</th>
+      <th class="col-l">🥗 Обед</th>
+      <th class="col-d">🍽 Ужин</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- ПОНЕДЕЛЬНИК -->
+    <tr>
+      <td class="day-cell">Пн<div class="day-num">29 июня</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Мюсли с молоком и орехами</div>
+        <div class="sub-dish">Банан или ягоды</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="main-dish">Щи из свежей капусты</div>
+        <div class="sub-dish">Морковь · лук · зелень</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">🐟 Хек в провансальском соусе</div>
+        <div class="sub-dish">Томаты · оливки · чеснок · печёные овощи</div>
+      </td>
+    </tr>
+
+    <!-- ВТОРНИК -->
+    <tr>
+      <td class="day-cell">Вт<div class="day-num">30 июня</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Панкейки</div>
+        <div class="sub-dish">Мёд · орехи · твёрдый сыр</div>
+      </td>
+      <td class="cell-l">
+        <div class="main-dish">Щи из свежей капусты</div>
+        <div class="sub-dish">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">Индейка запечённая с травами</div>
+        <div class="sub-dish">Ньокки (гарнир) · цукини · тимьян</div>
+      </td>
+    </tr>
+
+    <!-- СРЕДА -->
+    <tr>
+      <td class="day-cell">Ср<div class="day-num">1 июля</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Шакшука с перцем и фетой</div>
+        <div class="sub-dish">Кинза · ржаной хлеб</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="main-dish">Суп с говяжьим фаршем и томатами</div>
+        <div class="sub-dish">Морковь · лук · консерв. томаты</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">Куриные бёдра запечённые</div>
+        <div class="sub-dish">Рис · чеснок · паприка · овощи</div>
+      </td>
+    </tr>
+
+    <!-- ЧЕТВЕРГ -->
+    <tr>
+      <td class="day-cell">Чт<div class="day-num">2 июля</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Блинчики с мёдом</div>
+        <div class="sub-dish">Твёрдый сыр · орехи</div>
+      </td>
+      <td class="cell-l">
+        <div class="main-dish">Суп с говяжьим фаршем и томатами</div>
+        <div class="sub-dish">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">🦑 Паста фрутти ди маре</div>
+        <div class="sub-dish">Кальмары · вонголе · белое вино · чеснок</div>
+      </td>
+    </tr>
+
+    <!-- ПЯТНИЦА -->
+    <tr>
+      <td class="day-cell">Пт<div class="day-num">3 июля</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Яичница с грибами</div>
+        <div class="sub-dish">Болгарский перец · ржаной тост</div>
+      </td>
+      <td class="cell-l">
+        <div class="main-dish">Грибной суп с картофелем</div>
+        <div class="sub-dish">Шампиньоны · сливки · зелень</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">Куриные бёдра на гриле + тёплый салат</div>
+        <div class="sub-dish">Руккола · говяжий стейк 100 г · черри · пармезан</div>
+      </td>
+    </tr>
+
+    <!-- СУББОТА -->
+    <tr class="weekend">
+      <td class="day-cell">Сб<div class="day-num">4 июля</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Рисовая каша с яблоком</div>
+        <div class="sub-dish">Молоко · корица · мёд</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="main-dish">Суп из красной чечевицы</div>
+        <div class="sub-dish">Томаты · тмин · кориандр · лимон</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">🐟 Скумбрия на мангале</div>
+        <div class="sub-dish">Запечённые овощи · лимон · зелень</div>
+      </td>
+    </tr>
+
+    <!-- ВОСКРЕСЕНЬЕ -->
+    <tr class="weekend">
+      <td class="day-cell">Вс<div class="day-num">5 июля</div></td>
+      <td class="cell-b">
+        <div class="main-dish">Панкейки</div>
+        <div class="sub-dish">Орехи · мёд · твёрдый сыр</div>
+      </td>
+      <td class="cell-l">
+        <div class="main-dish">Суп из красной чечевицы</div>
+        <div class="sub-dish">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="main-dish">Котлеты из говяжьего фарша</div>
+        <div class="sub-dish">Картофельное пюре · свежий огурец</div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- TIPS + NUTRI -->
+<div class="tips-section">
+
+  <div class="tip-box">
+    <div class="tip-box-title">🧄 Маринуем заранее</div>
+    <div class="tip-item"><b>Хек (Пн):</b> за 30 мин — оливковое масло + лимон + тимьян.</div>
+    <div class="tip-item"><b>Индейка (Вт):</b> с вечера пн — масло + чеснок + розмарин + тимьян.</div>
+    <div class="tip-item"><b>Куриные бёдра (Ср):</b> с вечера вт — соевый соус + чеснок + паприка + мёд.</div>
+    <div class="tip-item"><b>Скумбрия (Сб):</b> за 1–2 часа — масло + лимон + чеснок. Надрезы на тушке.</div>
+  </div>
+
+  <div class="nutri-box">
+    <div class="nutri-box-title">📊 Нутрициология недели</div>
+    <div class="nutri-item">
+      <span class="ok">✓</span> Жирная рыба: скумбрия (Сб) — омега-3<br>
+      <span class="ok">✓</span> Морепродукты: кальмары + вонголе (Чт)<br>
+      <span class="ok">✓</span> Рыбных ужинов: 2 из 7, не подряд<br>
+      <span class="ok">✓</span> Красное мясо: 1 раз (котлеты Вс)<br>
+      <span class="ok">✓</span> Бобовые: чечевица (Сб–Вс)<br>
+      <span class="warn">!</span> Куриные бёдра Ср + Пт — повтор
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Следующее меню · 5 июля 2026 &nbsp;·&nbsp; Бюджет ~10 000 руб/нед
+</div>
+
+</body>
+</html>
