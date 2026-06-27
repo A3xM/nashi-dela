@@ -14,7 +14,6 @@
     min-height: 100vh;
   }
 
-  /* HEADER */
   .header {
     background: linear-gradient(160deg, #1A2332 0%, #2C5F7A 60%, #3A7CA5 100%);
     padding: 48px 24px 36px;
@@ -59,7 +58,6 @@
     font-weight: 400;
   }
 
-  /* LEGEND */
   .legend {
     display: flex;
     justify-content: center;
@@ -76,12 +74,8 @@
     color: #888;
     font-weight: 500;
   }
-  .legend-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-  }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-  /* CONTENT */
   .content {
     padding: 16px;
     max-width: 430px;
@@ -91,14 +85,12 @@
     gap: 10px;
   }
 
-  /* DAY CARD */
   .day-card {
     background: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 2px 16px rgba(0,0,0,0.055);
   }
-
   .day-header {
     padding: 14px 18px 12px;
     border-bottom: 1px solid #F5F0EB;
@@ -106,27 +98,12 @@
     align-items: center;
     gap: 10px;
   }
-  .day-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .day-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .dot-weekend { background: #E76F51; }
   .dot-weekday { background: #3A7CA5; }
+  .day-name { font-size: 17px; font-weight: 700; color: #1A2332; flex: 1; }
+  .day-date { font-size: 13px; color: #B0A898; font-weight: 400; }
 
-  .day-name {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1A2332;
-    flex: 1;
-  }
-  .day-date {
-    font-size: 13px;
-    color: #B0A898;
-    font-weight: 400;
-  }
-
-  /* MEAL ROW */
   .meal {
     padding: 13px 18px;
     display: flex;
@@ -150,7 +127,6 @@
   .icon-d { background: #EBF0F8; }
 
   .meal-content { flex: 1; }
-
   .meal-label {
     font-size: 10px;
     font-weight: 700;
@@ -162,20 +138,9 @@
   .label-l { color: #3A9E68; }
   .label-d { color: #3A7CA5; }
 
-  .meal-text {
-    font-size: 15px;
-    color: #2A3545;
-    line-height: 1.45;
-    font-weight: 600;
-  }
-  .meal-sub {
-    font-size: 12.5px;
-    color: #AAA098;
-    margin-top: 2px;
-    font-weight: 400;
-  }
+  .meal-text { font-size: 15px; color: #2A3545; line-height: 1.45; font-weight: 600; }
+  .meal-sub { font-size: 12.5px; color: #AAA098; margin-top: 2px; font-weight: 400; }
 
-  /* SOUP BADGE */
   .soup-tag {
     display: inline-flex;
     align-items: center;
@@ -190,7 +155,6 @@
     margin-bottom: 5px;
   }
 
-  /* TIP CARD */
   .tip-card {
     border-radius: 16px;
     background: linear-gradient(135deg, #E76F51 0%, #C85A3A 100%);
@@ -199,13 +163,7 @@
     gap: 12px;
     align-items: flex-start;
   }
-  .tip-emoji {
-    font-size: 22px;
-    line-height: 1;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .tip-content {}
+  .tip-emoji { font-size: 22px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
   .tip-title {
     font-size: 12px;
     font-weight: 700;
@@ -214,14 +172,8 @@
     color: rgba(255,255,255,0.75);
     margin-bottom: 4px;
   }
-  .tip-text {
-    font-size: 14px;
-    color: white;
-    line-height: 1.5;
-    font-weight: 500;
-  }
+  .tip-text { font-size: 14px; color: white; line-height: 1.5; font-weight: 500; }
 
-  /* NUTRI CARD */
   .nutri-card {
     border-radius: 16px;
     background: white;
@@ -237,17 +189,10 @@
     color: #3A7CA5;
     margin-bottom: 8px;
   }
-  .nutri-row {
-    font-size: 13px;
-    color: #4A5565;
-    line-height: 1.6;
-    margin-bottom: 3px;
-  }
-  .nutri-row:last-child { margin-bottom: 0; }
-  .nutri-ok { color: #3A9E68; font-weight: 600; }
-  .nutri-warn { color: #C05A18; font-weight: 600; }
+  .nutri-row { font-size: 13px; color: #4A5565; line-height: 1.65; }
+  .ok { color: #3A9E68; font-weight: 700; }
+  .warn { color: #C05A18; font-weight: 700; }
 
-  /* SECTION TITLE */
   .section-title {
     font-size: 11px;
     font-weight: 700;
@@ -257,7 +202,6 @@
     padding: 4px 4px 2px;
   }
 
-  /* FOOTER */
   .footer {
     text-align: center;
     padding: 28px 16px 48px;
@@ -266,9 +210,7 @@
     font-weight: 500;
     letter-spacing: 0.5px;
   }
-  .footer strong {
-    color: #A09888;
-  }
+  .footer strong { color: #A09888; }
 </style>
 </head>
 <body>
@@ -280,15 +222,9 @@
 </div>
 
 <div class="legend">
-  <div class="legend-item">
-    <div class="legend-dot" style="background:#E07A3A"></div>Завтрак
-  </div>
-  <div class="legend-item">
-    <div class="legend-dot" style="background:#3A9E68"></div>Обед
-  </div>
-  <div class="legend-item">
-    <div class="legend-dot" style="background:#3A7CA5"></div>Ужин
-  </div>
+  <div class="legend-item"><div class="legend-dot" style="background:#E07A3A"></div>Завтрак</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3A9E68"></div>Обед</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3A7CA5"></div>Ужин</div>
 </div>
 
 <div class="content">
@@ -306,16 +242,15 @@
       <div class="meal-icon icon-b">🥣</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Мюсли с йогуртом, бананом и орехами</div>
+        <div class="meal-text">Мюсли с молоком, бананом и орехами</div>
       </div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-l">🥬</div>
       <div class="meal-content">
-        <div class="soup-tag">◎ варим на 2 дня</div>
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Щи из свежей капусты</div>
-        <div class="meal-sub">морковь · зелень · сметана</div>
+        <div class="meal-text">Щи · остатки с субботы</div>
+        <div class="meal-sub">сметана · ржаной хлеб</div>
       </div>
     </div>
     <div class="meal">
@@ -346,7 +281,7 @@
       <div class="meal-icon icon-l">🥬</div>
       <div class="meal-content">
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Щи · день 2</div>
+        <div class="meal-text">Щи · день 4</div>
       </div>
     </div>
     <div class="meal">
@@ -370,8 +305,8 @@
       <div class="meal-icon icon-b">🍅</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Шакшука с болгарским перцем</div>
-        <div class="meal-sub">яйца в томатном соусе · фета · лаваш</div>
+        <div class="meal-text">Шакшука с болгарским перцем и фетой</div>
+        <div class="meal-sub">яйца в томатном соусе · лаваш</div>
       </div>
     </div>
     <div class="meal">
@@ -380,14 +315,14 @@
         <div class="soup-tag">◎ варим на 2 дня</div>
         <div class="meal-label label-l">Обед</div>
         <div class="meal-text">Суп из красной чечевицы</div>
-        <div class="meal-sub">морковь · специи · болгарский перец</div>
+        <div class="meal-sub">морковь · зира · болгарский перец на стол</div>
       </div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-d">🍗</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Куриные бёдра запечённые</div>
+        <div class="meal-text">Индейка запечённая с травами</div>
         <div class="meal-sub">+ ньокки сливочные (гарнир) · цукини</div>
       </div>
     </div>
@@ -404,8 +339,8 @@
       <div class="meal-icon icon-b">🥞</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Блинчики со сметаной</div>
-        <div class="meal-sub">+ мёд или ягодное варенье</div>
+        <div class="meal-text">Блинчики с мёдом + твёрдый сыр</div>
+        <div class="meal-sub">сметана — на стол для желающих</div>
       </div>
     </div>
     <div class="meal">
@@ -443,10 +378,11 @@
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-l">🍵</div>
+      <div class="meal-icon icon-l">🍄</div>
       <div class="meal-content">
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Суп мисо</div>
+        <div class="meal-text">Грибной суп с картофелем</div>
+        <div class="meal-sub">шампиньоны · зелень · сметана</div>
       </div>
     </div>
     <div class="meal">
@@ -470,7 +406,7 @@
       <div class="meal-icon icon-b">🍚</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Рисовая каша с яблоком и корицей</div>
+        <div class="meal-text">Рисовая каша на молоке с яблоком и корицей</div>
         <div class="meal-sub">+ мёд · орехи</div>
       </div>
     </div>
@@ -498,7 +434,7 @@
     <div class="tip-emoji">🐟</div>
     <div class="tip-content">
       <div class="tip-title">Маринование с пятницы</div>
-      <div class="tip-text">Скумбрия → лимон, оливковое масло, розмарин, чеснок. Вакуум, 4+ часа.<br>Курица (вс) → горчица, масло, чеснок, прованские травы. Ночь в холодильнике.</div>
+      <div class="tip-text">Скумбрия → лимон, оливковое масло, розмарин, чеснок. Вакуум, 4+ часа.<br>Котлеты (вс) → замесить фарш в субботу: лук, чеснок, яйцо, сухари. Ночь в холодильнике.</div>
     </div>
   </div>
 
@@ -513,8 +449,8 @@
       <div class="meal-icon icon-b">🥞</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Панкейки с йогуртом и орехами</div>
-        <div class="meal-sub">+ кленовый сироп или мёд</div>
+        <div class="meal-text">Панкейки с орехами и твёрдым сыром</div>
+        <div class="meal-sub">+ мёд или кленовый сироп</div>
       </div>
     </div>
     <div class="meal">
@@ -525,11 +461,11 @@
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-d">🍗</div>
+      <div class="meal-icon icon-d">🥩</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Курица целиком в духовке с травами</div>
-        <div class="meal-sub">+ булгур · свежий салат</div>
+        <div class="meal-text">Домашние котлеты из говяжьего фарша</div>
+        <div class="meal-sub">+ картофельное пюре · огуречный салат</div>
       </div>
     </div>
   </div>
@@ -537,12 +473,13 @@
   <!-- NUTRI NOTES -->
   <div class="nutri-card">
     <div class="nutri-title">Нутрициологические заметки</div>
-    <div class="nutri-row"><span class="nutri-ok">✓</span> Жирная рыба 2×: форель (пт) + скумбрия (сб) — омега-3 перекрыт</div>
-    <div class="nutri-row"><span class="nutri-ok">✓</span> Белок каждый вечер — рыба / морепродукты / птица</div>
-    <div class="nutri-row"><span class="nutri-ok">✓</span> Чечевица (ср+чт): железо для подростков — подавать с болгарским перцем (витамин С)</div>
-    <div class="nutri-row"><span class="nutri-ok">✓</span> Кальций: йогурт → сыр → фета → сметана → пармезан + кефир ежедневно!</div>
-    <div class="nutri-row"><span class="nutri-warn">!</span> Альбина вт–чт: паста / ньокки / рис — половина порции + двойной овощной гарнир</div>
-    <div class="nutri-row"><span class="nutri-warn">!</span> В следующую неделю: говяжий фарш для гемового железа</div>
+    <div class="nutri-row"><span class="ok">✓</span> Гемовое железо: котлеты (вс) — для подростков</div>
+    <div class="nutri-row"><span class="ok">✓</span> Омега-3: форель (пт) + скумбрия (сб) — 2× в неделю</div>
+    <div class="nutri-row"><span class="ok">✓</span> Железо + витамин С: чечевица (ср+чт) + болгарский перец на стол</div>
+    <div class="nutri-row"><span class="ok">✓</span> Кальций без кисломолочки: молоко в кашах, сыр каждый день</div>
+    <div class="nutri-row"><span class="ok">✓</span> Белок на завтрак: орехи/яйца/сыр в каждом приёме</div>
+    <div class="nutri-row"><span class="warn">!</span> Альбина вт+ср: паста/ньокки — половина порции + двойной овощной гарнир</div>
+    <div class="nutri-row"><span class="warn">!</span> Кофеин исключить: кола и энергетики не покупать</div>
   </div>
 
 </div>
