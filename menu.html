@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Меню · 29 июня — 5 июля</title>
+<title>Меню · 5–11 июля</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -155,6 +155,42 @@
     margin-bottom: 5px;
   }
 
+  .guest-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #E07A3A;
+    background: #FFF3E6;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: auto;
+  }
+
+  .note-card {
+    border-radius: 16px;
+    background: white;
+    border-left: 4px solid #9B59B6;
+    padding: 14px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.045);
+  }
+  .note-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #9B59B6;
+    margin-bottom: 8px;
+  }
+  .note-row {
+    font-size: 13px;
+    color: #4A5565;
+    line-height: 1.7;
+  }
+  .note-row b { color: #2A3545; }
+
   .tip-card {
     border-radius: 16px;
     background: linear-gradient(135deg, #E76F51 0%, #C85A3A 100%);
@@ -218,7 +254,7 @@
 <div class="header">
   <div class="header-label">Семейное меню</div>
   <div class="header-title">🍽 На неделю</div>
-  <div class="header-dates">29 июня — 5 июля · 2026</div>
+  <div class="header-dates">5–11 июля · 2026</div>
 </div>
 
 <div class="legend">
@@ -229,6 +265,77 @@
 
 <div class="content">
 
+  <div class="section-title">Выходные</div>
+
+  <!-- СУББОТА -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-dot dot-weekend"></div>
+      <div class="day-name">Суббота</div>
+      <div class="day-date">5 июля</div>
+      <div class="guest-badge">👤 Гость</div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-b">🥞</div>
+      <div class="meal-content">
+        <div class="meal-label label-b">Завтрак</div>
+        <div class="meal-text">Панкейки с ягодами</div>
+        <div class="meal-sub">Мёд · орехи · твёрдый сыр ломтиками</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-l">🥣</div>
+      <div class="meal-content">
+        <div class="meal-label label-l">Обед</div>
+        <div class="soup-tag">◎ варим на 2 дня</div>
+        <div class="meal-text">Куриный суп с рисом и лимоном</div>
+        <div class="meal-sub">Домашний бульон · рис · зелень · лимонный сок</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-d">🥩</div>
+      <div class="meal-content">
+        <div class="meal-label label-d">Ужин</div>
+        <div class="meal-text">Стейки из свиной шеи на мангале</div>
+        <div class="meal-sub">Запечённые кабачки, баклажан, перец · кукуруза на углях</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ВОСКРЕСЕНЬЕ -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-dot dot-weekend"></div>
+      <div class="day-name">Воскресенье</div>
+      <div class="day-date">6 июля</div>
+      <div class="guest-badge">👤 Гость</div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-b">🍳</div>
+      <div class="meal-content">
+        <div class="meal-label label-b">Завтрак</div>
+        <div class="meal-text">Омлет с фетой и болгарским перцем</div>
+        <div class="meal-sub">Зелень · ржаной тост</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-l">🥣</div>
+      <div class="meal-content">
+        <div class="meal-label label-l">Обед</div>
+        <div class="meal-text">Куриный суп с рисом и лимоном</div>
+        <div class="meal-sub">День 2</div>
+      </div>
+    </div>
+    <div class="meal">
+      <div class="meal-icon icon-d">🍛</div>
+      <div class="meal-content">
+        <div class="meal-label label-d">Ужин</div>
+        <div class="meal-text">Курица тикка-масала</div>
+        <div class="meal-sub">Рис басмати · лаваш · кинза</div>
+      </div>
+    </div>
+  </div>
+
   <div class="section-title">Будни</div>
 
   <!-- ПОНЕДЕЛЬНИК -->
@@ -236,30 +343,31 @@
     <div class="day-header">
       <div class="day-dot dot-weekday"></div>
       <div class="day-name">Понедельник</div>
-      <div class="day-date">29 июня</div>
+      <div class="day-date">7 июля</div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-b">🥣</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Мюсли с молоком, бананом и орехами</div>
+        <div class="meal-text">Овсянка на молоке с ягодами</div>
+        <div class="meal-sub">Грецкие орехи · чиа · мёд</div>
       </div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-l">🥬</div>
       <div class="meal-content">
-        <div class="soup-tag">◎ варим на 2 дня</div>
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Щи из свежей капусты</div>
-        <div class="meal-sub">морковь · зелень · сметана</div>
+        <div class="soup-tag">◎ варим на 2 дня</div>
+        <div class="meal-text">Суп-пюре из кабачков</div>
+        <div class="meal-sub">Сливки · базилик · гренки</div>
       </div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-d">🐟</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Хек в провансальском соусе</div>
-        <div class="meal-sub">помидоры · оливки · каперсы + печёные овощи</div>
+        <div class="meal-text">Форель запечённая с лимоном и каперсами</div>
+        <div class="meal-sub">Тимьян · оливковое масло · брокколи на пару</div>
       </div>
     </div>
   </div>
@@ -269,28 +377,30 @@
     <div class="day-header">
       <div class="day-dot dot-weekday"></div>
       <div class="day-name">Вторник</div>
-      <div class="day-date">30 июня</div>
+      <div class="day-date">8 июля</div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-b">🥑</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
         <div class="meal-text">Тосты с авокадо и твёрдым сыром</div>
+        <div class="meal-sub">Кунжут · лимонный сок · ржаной хлеб</div>
       </div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-l">🥬</div>
       <div class="meal-content">
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Щи · день 2</div>
+        <div class="meal-text">Суп-пюре из кабачков</div>
+        <div class="meal-sub">День 2</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-d">🍗</div>
+      <div class="meal-icon icon-d">🍜</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Индейка запечённая с травами</div>
-        <div class="meal-sub">+ ньокки сливочные (гарнир) · цукини</div>
+        <div class="meal-text">Курица стир-фрай с соба-лапшой</div>
+        <div class="meal-sub">Морковь · болгарский перец · имбирь · соевый соус</div>
       </div>
     </div>
   </div>
@@ -300,31 +410,31 @@
     <div class="day-header">
       <div class="day-dot dot-weekday"></div>
       <div class="day-name">Среда</div>
-      <div class="day-date">1 июля</div>
+      <div class="day-date">9 июля</div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-b">🍅</div>
+      <div class="meal-icon icon-b">🥞</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Шакшука с болгарским перцем и фетой</div>
-        <div class="meal-sub">яйца в томатном соусе · лаваш</div>
+        <div class="meal-text">Блинчики с мёдом</div>
+        <div class="meal-sub">Орехи · ягоды · сметана по желанию</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-l">🥩</div>
+      <div class="meal-icon icon-l">🫛</div>
       <div class="meal-content">
-        <div class="soup-tag">◎ варим на 2 дня</div>
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Суп с говяжьим фаршем и помидорами</div>
-        <div class="meal-sub">рис · болгарский перец · зелень</div>
+        <div class="soup-tag">◎ варим на 2 дня</div>
+        <div class="meal-text">Гороховый суп</div>
+        <div class="meal-sub">Куриная ветчина · морковь · зелень</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-d">🍗</div>
+      <div class="meal-icon icon-d">🦪</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Куриные бёдра запечённые</div>
-        <div class="meal-sub">+ рис · свежий огуречный салат</div>
+        <div class="meal-text">Лингвини с мидиями</div>
+        <div class="meal-sub">Томатно-чесночный соус · петрушка · белое вино</div>
       </div>
     </div>
   </div>
@@ -334,159 +444,140 @@
     <div class="day-header">
       <div class="day-dot dot-weekday"></div>
       <div class="day-name">Четверг</div>
-      <div class="day-date">2 июля</div>
+      <div class="day-date">10 июля</div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-b">🥞</div>
+      <div class="meal-icon icon-b">🍳</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Блинчики с мёдом + твёрдый сыр</div>
-        <div class="meal-sub">сметана — на стол для желающих</div>
+        <div class="meal-text">Яичница с грибами и болгарским перцем</div>
+        <div class="meal-sub">Ржаной тост · зелень</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-l">🥩</div>
+      <div class="meal-icon icon-l">🫛</div>
       <div class="meal-content">
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Суп с фаршем и помидорами · день 2</div>
+        <div class="meal-text">Гороховый суп</div>
+        <div class="meal-sub">День 2</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-d">🍝</div>
+      <div class="meal-icon icon-d">🍛</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Паста фрутти ди маре</div>
-        <div class="meal-sub">кальмары + вонголе · чеснок · белое вино · петрушка</div>
+        <div class="meal-text">Куриное карри с нутом и шпинатом</div>
+        <div class="meal-sub">Рис · болгарский перец · кориандр · лимон</div>
       </div>
     </div>
   </div>
-
-  <div class="section-title">Конец недели · Иван</div>
 
   <!-- ПЯТНИЦА -->
   <div class="day-card">
     <div class="day-header">
       <div class="day-dot dot-weekend"></div>
       <div class="day-name">Пятница</div>
-      <div class="day-date">3 июля</div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-b">🍳</div>
-      <div class="meal-content">
-        <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Яичница с грибами и луком</div>
-        <div class="meal-sub">+ ржаной хлеб · свежие овощи</div>
-      </div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-l">🍄</div>
-      <div class="meal-content">
-        <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Грибной суп с картофелем</div>
-        <div class="meal-sub">шампиньоны · зелень</div>
-      </div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-d">🍗</div>
-      <div class="meal-content">
-        <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Куриные бёдра на гриле в лимонном маринаде</div>
-        <div class="meal-sub">+ тёплый салат с рукколой и стейком (100г)</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- СУББОТА -->
-  <div class="day-card">
-    <div class="day-header">
-      <div class="day-dot dot-weekend"></div>
-      <div class="day-name">Суббота</div>
-      <div class="day-date">4 июля</div>
+      <div class="day-date">11 июля</div>
+      <div class="guest-badge">👤 Гость</div>
     </div>
     <div class="meal">
       <div class="meal-icon icon-b">🍚</div>
       <div class="meal-content">
         <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Рисовая каша на молоке с яблоком и корицей</div>
-        <div class="meal-sub">+ мёд · орехи</div>
+        <div class="meal-text">Рисовая каша с кокосовым молоком</div>
+        <div class="meal-sub">Яблоко · корица · грецкие орехи</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-l">🫘</div>
+      <div class="meal-icon icon-l">🌶️</div>
       <div class="meal-content">
-        <div class="soup-tag">◎ варим на 2 дня</div>
         <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Суп из красной чечевицы</div>
-        <div class="meal-sub">морковь · зира · болгарский перец на стол</div>
+        <div class="meal-text">Том-ям с тигровыми креветками</div>
+        <div class="meal-sub">Кокосовое молоко · лемонграсс · грибы</div>
       </div>
     </div>
     <div class="meal">
-      <div class="meal-icon icon-d">🔥</div>
+      <div class="meal-icon icon-d">🐟</div>
       <div class="meal-content">
         <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Скумбрия на мангале</div>
-        <div class="meal-sub">печёные овощи · лимон · свежая зелень</div>
+        <div class="meal-text">Дорада на гриле с лимонной гремолатой</div>
+        <div class="meal-sub">Печёные овощи · оливковое масло · петрушка</div>
       </div>
     </div>
   </div>
 
-  <!-- TIP -->
+  <!-- ЗАМЕТКИ -->
+  <div class="section-title">Заметки недели</div>
+
+  <div class="note-card">
+    <div class="note-title">⚡ Тренировки · водное поло</div>
+    <div class="note-row">
+      Завтрак — всегда плотный: орехи, молоко, сыр к любому блюду.<br>
+      После тренировки ужин — в течение 30–60 мин.<br>
+      <b>Пн:</b> форель после тренировки — белок + омега-3, идеально.<br>
+      Брать бутылку воды в бассейн: потоотделение незаметно.
+    </div>
+  </div>
+
+  <div class="note-card" style="border-left-color: #E8A838;">
+    <div class="note-title" style="color: #C07A10;">🧀 Кальций · без кисломолочного</div>
+    <div class="note-row">
+      К каждому завтраку — 30–40 г твёрдого сыра (гауда / пармезан).<br>
+      <b>Ср:</b> к блинчикам — без сметаны. Мёд + орехи.<br>
+      <b>Ср:</b> к лингвини с мидиями — тёртый пармезан щедро.<br>
+      <b>Вт:</b> кунжут на тостах — дополнительный кальций.
+    </div>
+  </div>
+
+  <div class="note-card" style="border-left-color: #3A9E68;">
+    <div class="note-title" style="color: #2A8A58;">🩸 Железо · нут</div>
+    <div class="note-row">
+      <b>Чт:</b> карри с нутом — добавить болгарский перец или выдавить лимон.<br>
+      Витамин С улучшает усвоение железа из бобовых.
+    </div>
+  </div>
+
+  <div class="note-card" style="border-left-color: #E76F51;">
+    <div class="note-title" style="color: #C05040;">🥗 Принцип тарелки · дефицит</div>
+    <div class="note-row">
+      <b>Вт:</b> стир-фрай с соба — лапши ¼ тарелки, овощи остальное.<br>
+      <b>Ср:</b> лингвини с мидиями — пасты меньше, добавить цукини.<br>
+      <b>Вс:</b> тикка-масала — риса ¼ тарелки, курицы и зелени больше.
+    </div>
+  </div>
+
+  <!-- МАРИНАДЫ -->
   <div class="tip-card">
-    <div class="tip-emoji">🐟</div>
-    <div class="tip-content">
-      <div class="tip-title">Маринование с пятницы</div>
-      <div class="tip-text">Скумбрия → лимон, оливковое масло, розмарин, чеснок. Вакуум, 4+ часа.<br>Котлеты (вс) → замесить фарш в субботу: лук, чеснок, яйцо, сухари. Ночь в холодильнике.</div>
-    </div>
-  </div>
-
-  <!-- ВОСКРЕСЕНЬЕ -->
-  <div class="day-card">
-    <div class="day-header">
-      <div class="day-dot dot-weekend"></div>
-      <div class="day-name">Воскресенье</div>
-      <div class="day-date">5 июля</div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-b">🥞</div>
-      <div class="meal-content">
-        <div class="meal-label label-b">Завтрак</div>
-        <div class="meal-text">Панкейки с орехами и твёрдым сыром</div>
-        <div class="meal-sub">+ мёд или кленовый сироп</div>
-      </div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-l">🫘</div>
-      <div class="meal-content">
-        <div class="meal-label label-l">Обед</div>
-        <div class="meal-text">Чечевичный суп · день 2</div>
-      </div>
-    </div>
-    <div class="meal">
-      <div class="meal-icon icon-d">🥩</div>
-      <div class="meal-content">
-        <div class="meal-label label-d">Ужин</div>
-        <div class="meal-text">Домашние котлеты из говяжьего фарша</div>
-        <div class="meal-sub">+ картофельное пюре · огуречный салат</div>
+    <div class="tip-emoji">🧄</div>
+    <div>
+      <div class="tip-title">Маринуем заранее</div>
+      <div class="tip-text">
+        <b>Свиная шея (Сб):</b> с пятницы вечером — соевый соус + мёд + горчица + чеснок.<br><br>
+        <b>Форель (Пн):</b> за 30–60 мин — оливковое масло + лимон + тимьян + каперсы.<br><br>
+        <b>Тикка-масала (Вс):</b> с вечера субботы — йогурт + карри + куркума + имбирь + чеснок.<br><br>
+        <b>Дорада (Пт):</b> за 1–2 часа — оливковое масло + лимонная цедра + чеснок + петрушка, надрезы на тушке.
       </div>
     </div>
   </div>
 
-  <!-- NUTRI NOTES -->
+  <!-- НУТРИЦИОЛОГИЯ -->
   <div class="nutri-card">
-    <div class="nutri-title">Нутрициологические заметки</div>
-    <div class="nutri-row"><span class="ok">✓</span> Рыба: пн, чт, сб — не подряд, через день</div>
-    <div class="nutri-row"><span class="ok">✓</span> Гемовое железо: фарш в супе (ср+чт) + котлеты (вс)</div>
-    <div class="nutri-row"><span class="ok">✓</span> Омега-3: скумбрия (сб) — жирная рыба</div>
-    <div class="nutri-row"><span class="ok">✓</span> Железо + витамин С: чечевица (сб+вс) + болгарский перец</div>
-    <div class="nutri-row"><span class="ok">✓</span> Кальций: молоко в кашах, твёрдый сыр каждый день</div>
-    <div class="nutri-row"><span class="warn">!</span> Альбина ср+вс: рис/пюре — половина порции + двойной овощной гарнир</div>
-    <div class="nutri-row"><span class="warn">!</span> Кофеин исключить — кола и энергетики не покупать</div>
+    <div class="nutri-title">Нутрициология недели</div>
+    <div class="nutri-row">
+      <span class="ok">✓</span> Жирная рыба: форель (Пн) — омега-3<br>
+      <span class="ok">✓</span> Морепродукты: мидии (Ср), креветки в том-яме (Пт)<br>
+      <span class="ok">✓</span> Рыбных ужинов: 2 из 7, не подряд<br>
+      <span class="ok">✓</span> Бобовые с витамином С: нут + перец/лимон (Чт)<br>
+      <span class="ok">✓</span> Белок в каждом ужине<br>
+      <span class="ok">✓</span> Яичных завтраков: 2 из 7<br>
+      <span class="warn">!</span> Красное мясо: перерыв (следующий — с 15 июля)
+    </div>
   </div>
 
 </div>
 
 <div class="footer">
-  Следующее меню · <strong>Понедельник, 6 июля</strong>
+  Следующее меню · <strong>12 июля 2026</strong>
 </div>
 
 </body>
