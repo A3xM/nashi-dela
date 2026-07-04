@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Список покупок · 6–12 июля · Печать</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #1A2332;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* HEADER */
+  .header {
+    background-color: #1A2332;
+    padding: 7pt 12pt;
+    border-radius: 5pt;
+    margin-bottom: 9pt;
+    overflow: hidden;
+  }
+  .header-right {
+    float: right;
+    text-align: right;
+    font-size: 7pt;
+    color: #7a9aaa;
+    padding-top: 3pt;
+    line-height: 1.6;
+  }
+  .header-label {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5a8899;
+    margin-bottom: 2pt;
+  }
+  .header-title {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .header-dates {
+    font-size: 8pt;
+    color: #7a9aaa;
+    margin-top: 1pt;
+  }
+
+  /* TWO-COLUMN LAYOUT */
+  .columns {
+    overflow: hidden;
+  }
+  .col {
+    float: left;
+    width: 48.5%;
+  }
+  .col:last-child {
+    float: right;
+  }
+
+  /* CATEGORY */
+  .category {
+    margin-bottom: 7pt;
+  }
+  .cat-title {
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2.5pt 5pt;
+    border-radius: 2pt;
+    margin-bottom: 3pt;
+    color: white;
+  }
+  .cat-fish    { background-color: #205080; }
+  .cat-meat    { background-color: #8B3A20; }
+  .cat-dairy   { background-color: #5A6E30; }
+  .cat-veg     { background-color: #207040; }
+  .cat-dry     { background-color: #6A5040; }
+  .cat-sauces  { background-color: #704020; }
+  .cat-bread   { background-color: #8A7050; }
+
+  /* ITEM */
+  .item {
+    display: table;
+    width: 100%;
+    padding: 2pt 4pt;
+    border-bottom: 0.4pt solid #EDE8E3;
+    vertical-align: middle;
+  }
+  .item-check {
+    display: table-cell;
+    width: 14pt;
+    font-size: 10pt;
+    color: #C8C0B8;
+    vertical-align: middle;
+    padding-top: 0.5pt;
+  }
+  .item-name {
+    display: table-cell;
+    font-size: 8.5pt;
+    color: #1A2332;
+    vertical-align: middle;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+  .item-qty {
+    display: table-cell;
+    font-size: 7pt;
+    color: #9A9088;
+    text-align: right;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 4pt;
+  }
+
+  /* Items already in cart */
+  .item.have .item-name { color: #A09888; }
+  .item.have .item-qty  { color: #C0B8B0; }
+  .item.have .item-check { color: #B8E0B0; }
+
+  /* FOOTER */
+  .footer {
+    clear: both;
+    margin-top: 8pt;
+    border-top: 0.5pt solid #DDD8D0;
+    padding-top: 5pt;
+    overflow: hidden;
+  }
+  .footer-left {
+    float: left;
+    font-size: 7pt;
+    color: #B0A898;
+  }
+  .footer-right {
+    float: right;
+    font-size: 7pt;
+    color: #B0A898;
+  }
+  .legend {
+    display: inline-block;
+    width: 8pt; height: 8pt;
+    border-radius: 1pt;
+    vertical-align: middle;
+    margin-right: 3pt;
+  }
+
+  @media print {
+    body { background: white; }
+    .header { background-color: #1A2332 !important; }
+    .header-title { color: #ffffff !important; }
+    .cat-fish   { background-color: #205080 !important; }
+    .cat-meat   { background-color: #8B3A20 !important; }
+    .cat-dairy  { background-color: #5A6E30 !important; }
+    .cat-veg    { background-color: #207040 !important; }
+    .cat-dry    { background-color: #6A5040 !important; }
+    .cat-sauces { background-color: #704020 !important; }
+    .cat-bread  { background-color: #8A7050 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-right">
+    <div>☐ купить &nbsp;&nbsp; <span style="color:#B8E0B0;">☑</span> уже есть</div>
+  </div>
+  <div class="header-label">Семейное меню · 6–12 июля</div>
+  <div class="header-title">Список покупок</div>
+  <div class="header-dates">~10 000 руб/нед</div>
+</div>
+
+<div class="columns">
+
+  <!-- ЛЕВАЯ КОЛОНКА -->
+  <div class="col">
+
+    <div class="category">
+      <div class="cat-title cat-fish">Рыба и морепродукты</div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Треска</div>
+        <div class="item-qty">~700г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Копчёная скумбрия</div>
+        <div class="item-qty">~150г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Вонголе замороженные</div>
+        <div class="item-qty">~500г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Сибас</div>
+        <div class="item-qty">2–3 шт по 400г</div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title cat-meat">Мясо и птица</div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Курица целиком</div>
+        <div class="item-qty">1 шт</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Говяжий фарш</div>
+        <div class="item-qty">~600г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Бекон / грудинка</div>
+        <div class="item-qty">1 пачка</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Колбаски из индейки</div>
+        <div class="item-qty">2 пачки</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Индейка филе</div>
+        <div class="item-qty">~400г</div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title cat-dairy">Молочка и яйца</div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Яйца куриные</div>
+        <div class="item-qty">10–12 шт</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Перепелиные яйца</div>
+        <div class="item-qty">1 упак.</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Молоко</div>
+        <div class="item-qty">1,5 л</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Сыр твёрдый (гауда / чеддер)</div>
+        <div class="item-qty">300г</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Творог</div>
+        <div class="item-qty">250г</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Сливки 20%</div>
+        <div class="item-qty">500 мл</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Фета</div>
+        <div class="item-qty">~150г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Пармезан</div>
+        <div class="item-qty">кусок 100г</div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title cat-bread">Хлеб</div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Ржаной хлеб</div>
+        <div class="item-qty">1 буханка</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ПРАВАЯ КОЛОНКА -->
+  <div class="col">
+
+    <div class="category">
+      <div class="cat-title cat-veg">Овощи и зелень</div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Спаржа</div>
+        <div class="item-qty">1 пучок</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Цукини</div>
+        <div class="item-qty">2–3 шт</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Грибы шампиньоны</div>
+        <div class="item-qty">300г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Болгарский перец</div>
+        <div class="item-qty">4–5 шт</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Авокадо</div>
+        <div class="item-qty">3 шт</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Лимоны</div>
+        <div class="item-qty">5–6 шт</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Лайм</div>
+        <div class="item-qty">2 шт</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Имбирь свежий</div>
+        <div class="item-qty">1 корень</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Лемонграсс</div>
+        <div class="item-qty">2 стебля</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Петрушка</div>
+        <div class="item-qty">1 пучок</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Кориандр / кинза</div>
+        <div class="item-qty">1 пучок</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Розовые помидоры</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Картофель</div>
+        <div class="item-qty">4–5 шт</div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title cat-dry">Бакалея</div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Мюсли</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Дамплинги замороженные</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Зелёная чечевица</div>
+        <div class="item-qty">300г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Ньокки картофельные</div>
+        <div class="item-qty">500г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Соба-лапша</div>
+        <div class="item-qty">200г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Спагетти</div>
+        <div class="item-qty">500г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Рис длиннозёрный</div>
+        <div class="item-qty">300г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Консервированные томаты</div>
+        <div class="item-qty">2 банки</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Кокосовое молоко</div>
+        <div class="item-qty">2 банки</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Тунец консервированный</div>
+        <div class="item-qty">2 банки</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Лобио / красная фасоль</div>
+        <div class="item-qty">1 банка</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Овсяная мука</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Вишня</div>
+        <div class="item-qty">200г</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Ягоды сезонные</div>
+        <div class="item-qty">200г</div>
+      </div>
+      <div class="item have">
+        <div class="item-check">☑</div>
+        <div class="item-name">Грецкие орехи</div>
+        <div class="item-qty"></div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="cat-title cat-sauces">Соусы и специи</div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Белое вино сухое</div>
+        <div class="item-qty">1 бут.</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Рыбный соус (азиатский)</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Соевый соус</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Карри-порошок</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Тмин молотый</div>
+        <div class="item-qty"></div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Каперсы</div>
+        <div class="item-qty">1 баночка</div>
+      </div>
+      <div class="item">
+        <div class="item-check">☐</div>
+        <div class="item-name">Оливки зелёные</div>
+        <div class="item-qty"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-left">
+    <span class="legend" style="background-color:#B8E0B0;"></span> уже в корзине &nbsp;&nbsp;
+    <span class="legend" style="border: 0.5pt solid #C8C0B8; background: white;"></span> купить
+  </div>
+  <div class="footer-right">Меню 6–12 июля 2026</div>
+</div>
+
+</body>
+</html>
