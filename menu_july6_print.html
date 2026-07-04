@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Меню · 6–12 июля · Печать</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9pt;
+    color: #1A2332;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* HEADER */
+  .header {
+    background-color: #1A2332;
+    padding: 7pt 12pt;
+    border-radius: 5pt;
+    margin-bottom: 7pt;
+    overflow: hidden;
+  }
+  .header-right {
+    float: right;
+    text-align: right;
+    font-size: 7pt;
+    color: #7a9aaa;
+    line-height: 1.9;
+    padding-top: 1pt;
+  }
+  .header-label {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5a8899;
+    margin-bottom: 2pt;
+  }
+  .header-title {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  .header-dates {
+    font-size: 8pt;
+    color: #7a9aaa;
+    margin-top: 1pt;
+  }
+  .dot {
+    display: inline-block;
+    width: 6pt;
+    height: 6pt;
+    border-radius: 50%;
+    margin-right: 3pt;
+    vertical-align: middle;
+  }
+
+  /* MENU TABLE */
+  table.menu {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  table.menu th {
+    padding: 4pt 6pt;
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: left;
+    border-bottom: 1.5pt solid #1A2332;
+  }
+  th.col-day { width: 12%; color: #1A2332; }
+  th.col-b   { width: 26%; color: #B05010; }
+  th.col-l   { width: 27%; color: #207040; }
+  th.col-d   { width: 35%; color: #205080; }
+
+  table.menu td {
+    padding: 5pt 6pt;
+    vertical-align: top;
+    border-bottom: 0.5pt solid #E5E0DA;
+    color: #1A2332;
+    line-height: 1.3;
+  }
+  .day-cell {
+    font-weight: 700;
+    font-size: 8.5pt;
+    vertical-align: middle;
+  }
+  .day-num {
+    font-size: 7pt;
+    color: #B0A898;
+    font-weight: 400;
+    margin-top: 1pt;
+  }
+
+  tr.weekend td { border-left: 2pt solid #C05030; }
+  tr.weekend .day-cell { color: #C05030; }
+
+  td.cell-b { border-top: 1.2pt solid #C06020; }
+  td.cell-l { border-top: 1.2pt solid #207040; }
+  td.cell-d { border-top: 1.2pt solid #205080; }
+
+  .dish {
+    font-weight: 600;
+    font-size: 8.5pt;
+    color: #1A2332;
+  }
+  .detail {
+    font-size: 7pt;
+    color: #8A9AAA;
+    margin-top: 1.5pt;
+    line-height: 1.35;
+  }
+
+  .soup-badge {
+    display: inline-block;
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: #207040;
+    border: 0.75pt solid #207040;
+    padding: 0.5pt 3pt;
+    border-radius: 2pt;
+    margin-bottom: 2pt;
+  }
+
+  /* BOTTOM */
+  .bottom {
+    margin-top: 7pt;
+    overflow: hidden;
+  }
+  .bottom-left {
+    float: left;
+    width: 49%;
+    border-left: 2.5pt solid #C05030;
+    background-color: #fff8f5;
+    padding: 6pt 8pt;
+    border-radius: 3pt;
+  }
+  .bottom-right {
+    float: right;
+    width: 49%;
+    border-left: 2.5pt solid #205080;
+    background-color: #f4f7fc;
+    padding: 6pt 8pt;
+    border-radius: 3pt;
+  }
+  .box-title {
+    font-size: 6.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4pt;
+  }
+  .bottom-left .box-title { color: #993020; }
+  .bottom-right .box-title { color: #204870; }
+
+  .tip { font-size: 7.5pt; color: #3A4555; line-height: 1.5; margin-bottom: 2.5pt; }
+  .tip b { color: #1A2332; }
+
+  .nutri { font-size: 7.5pt; color: #3A4555; line-height: 1.7; }
+  .ok   { color: #207040; font-weight: 700; }
+  .warn { color: #B05010; font-weight: 700; }
+
+  .footer {
+    clear: both;
+    margin-top: 6pt;
+    text-align: center;
+    font-size: 7pt;
+    color: #B0A898;
+  }
+
+  @media print {
+    body { background: white; }
+    .header { background-color: #1A2332 !important; }
+    .header-title { color: #ffffff !important; }
+    .header-label { color: #5a8899 !important; }
+    .header-dates, .header-right { color: #7a9aaa !important; }
+    .bottom-left { background-color: #fff8f5 !important; }
+    .bottom-right { background-color: #f4f7fc !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-right">
+    <div><span class="dot" style="background-color:#C06020"></span>Завтрак</div>
+    <div><span class="dot" style="background-color:#207040"></span>Обед</div>
+    <div><span class="dot" style="background-color:#205080"></span>Ужин</div>
+  </div>
+  <div class="header-label">Семейное меню</div>
+  <div class="header-title">Меню на неделю</div>
+  <div class="header-dates">6–12 июля 2026</div>
+</div>
+
+<table class="menu">
+  <thead>
+    <tr>
+      <th class="col-day">День</th>
+      <th class="col-b">Завтрак</th>
+      <th class="col-l">Обед</th>
+      <th class="col-d">Ужин</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="day-cell">Пн<div class="day-num">6 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Мюсли с молоком</div>
+        <div class="detail">Грецкие орехи · ягоды · мёд</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="dish">Португальский рыбный суп</div>
+        <div class="detail">Треска · запеч. помидоры · картофель · вино · петрушка</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Колбаски из индейки с булгуром</div>
+        <div class="detail">Запечённые кабачки и перец · горчица · зелень</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="day-cell">Вт<div class="day-num">7 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Тосты с авокадо и тунцом</div>
+        <div class="detail">Кунжут · лимонный сок · ржаной хлеб</div>
+      </td>
+      <td class="cell-l">
+        <div class="dish">Португальский рыбный суп</div>
+        <div class="detail">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Болоньезе</div>
+        <div class="detail">Говяжий фарш · консерв. томаты · морковь · лук · пармезан</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="day-cell">Ср<div class="day-num">8 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Рисовая каша с ягодами</div>
+        <div class="detail">Молоко · грецкие орехи · мёд · корица</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="dish">Тайский суп с дамплингами</div>
+        <div class="detail">Кокосовое молоко · лемонграсс · имбирь · рыбный соус</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Кеджери</div>
+        <div class="detail">Копч. скумбрия + треска · рис · перепел. яйца · карри · сливки</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="day-cell">Чт<div class="day-num">9 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Омлет с грибами</div>
+        <div class="detail">Болгарский перец · твёрдый сыр · зелень · тост</div>
+      </td>
+      <td class="cell-l">
+        <div class="dish">Тайский суп с дамплингами</div>
+        <div class="detail">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Соба с индейкой</div>
+        <div class="detail">Морковь · болгарский перец · имбирь · соевый соус · кунжут</div>
+      </td>
+    </tr>
+
+    <tr class="weekend">
+      <td class="day-cell">Пт<div class="day-num">10 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Спаржа с яйцом и беконом</div>
+        <div class="detail">Ржаной тост · зелень · оливковое масло</div>
+      </td>
+      <td class="cell-l">
+        <div class="detail" style="color:#C0B8B0; font-style: italic;">—</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Вонголе с ньокки</div>
+        <div class="detail">Белое вино · чеснок · петрушка · оливк. масло · пармезан</div>
+      </td>
+    </tr>
+
+    <tr class="weekend">
+      <td class="day-cell">Сб<div class="day-num">11 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Кекс с вишней на овсяной муке</div>
+        <div class="detail">Творог · яйца · мёд — белковый, без рафинир. сахара</div>
+      </td>
+      <td class="cell-l">
+        <div class="soup-badge">◎ 2 дня</div>
+        <div class="dish">Чечевичный суп с колбасками</div>
+        <div class="detail">Зелёная чечевица · морковь · тмин · кориандр</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Сациви с лобио</div>
+        <div class="detail">Курица в ореховом соусе · грецкие орехи · болгарский перец</div>
+      </td>
+    </tr>
+
+    <tr class="weekend">
+      <td class="day-cell">Вс<div class="day-num">12 июля</div></td>
+      <td class="cell-b">
+        <div class="dish">Фриттата с цукини и фетой</div>
+        <div class="detail">Свежая зелень · оливковое масло · ржаной хлеб</div>
+      </td>
+      <td class="cell-l">
+        <div class="dish">Чечевичный суп с колбасками</div>
+        <div class="detail">День 2</div>
+      </td>
+      <td class="cell-d">
+        <div class="dish">Сибас запечённый с лимоном</div>
+        <div class="detail">Зелёные оливки · каперсы · тимьян · печёные овощи</div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="bottom">
+  <div class="bottom-left">
+    <div class="box-title">Готовим заранее</div>
+    <div class="tip"><b>Болоньезе (Вт):</b> начать с вечера пн или с утра — соус тушить 1,5–2 часа на малом огне.</div>
+    <div class="tip"><b>Кеджери (Ср):</b> рис сварить накануне; скумбрию разобрать на кусочки заранее.</div>
+    <div class="tip"><b>Сациви (Сб):</b> курицу варить с утра; ореховый соус — за 2 часа; подавать холодным.</div>
+    <div class="tip"><b>Сибас (Вс):</b> за 1–2 часа — оливк. масло + лимон + чеснок + тимьян. Надрезы на тушке.</div>
+  </div>
+  <div class="bottom-right">
+    <div class="box-title">Нутрициология недели</div>
+    <div class="nutri">
+      <span class="ok">✓</span> Жирная рыба: кеджери с копч. скумбрией (Ср) — омега-3<br>
+      <span class="ok">✓</span> Рыбных ужинов: 3 из 7, не подряд (Ср, Пт, Вс)<br>
+      <span class="ok">✓</span> Красное мясо: болоньезе (Вт) — 10+ дней перерыва<br>
+      <span class="ok">✓</span> Бобовые с витамином С: лобио + перец (Сб), чечевица (Сб–Вс)<br>
+      <span class="ok">✓</span> Белок в каждом ужине<br>
+      <span class="ok">✓</span> Творог в выпечке (Сб) — кальций для всех ✓
+    </div>
+  </div>
+</div>
+
+<div class="footer">Следующее меню · 13 июля 2026 &nbsp;·&nbsp; Бюджет ~10 000 руб/нед</div>
+
+</body>
+</html>
